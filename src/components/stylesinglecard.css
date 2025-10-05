@@ -56,13 +56,13 @@
 @media (max-width: 768px) {
   .card-grid {
     grid-template-columns: repeat(4, auto);  /* Mobile: 2 columns */
-    gap: 3px;
+    gap: 2px;
     margin: 1px;
   }
 
    .card {
     margin-top: 20px;
-    width: 100px;
+    width: 90px;
     height: 80px;
   }
 
@@ -75,12 +75,15 @@
 /* ✅ Extra small phones */
 @media (max-width: 450px) {
   .card {
-    width: 120px;
+    width: 90px;
     height: 90px;
   }
 
   .card img {
-    width: 100px;
+    width: 90px;
     height: 80px;
+  }
+  .card-grid{
+    margin-top: 2px;
   }
 }
