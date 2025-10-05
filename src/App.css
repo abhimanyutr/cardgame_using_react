@@ -1,0 +1,12 @@
+.head{
+    font-family: "Poller One", sans-serif;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+

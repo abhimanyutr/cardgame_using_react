@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+  width: 180px;
+  height: 120px;
+ 
+  cursor: pointer;
+  perspective: 1000px; /* ✅ Enables 3D effect */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);  /* 4 columns */
+  gap: 15px;
+   margin: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.card img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  /* border: 2px solid white; */
+  border-radius: 1px; /* ✅ Better card look */
+  backface-visibility: hidden; /* ✅ Hide backside when flipped */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+}
+
+/* Back is visible first */
+.card .back {
+  transition:all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+/* Front is hidden at start */
+.card .front {
+  transform: rotateY(180deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+}
+
+/* When flipped */
+.card.flipped .front {
+  transform: rotateY(0deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(180deg);
+  transition-delay: 0s;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(4, auto);  /* Mobile: 2 columns */
+    gap: 3px;
+    margin: 1px;
+  }
+
+   .card {
+    margin-top: 20px;
+    width: 100px;
+    height: 80px;
+  }
+
+  .card img {
+    width: 90px;
+    height: 80px;
+  }
+
+}
+/* ✅ Extra small phones */
+@media (max-width: 450px) {
+  .card {
+    width: 120px;
+    height: 90px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 80px;
+  }
+}
